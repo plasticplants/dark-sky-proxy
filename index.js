@@ -44,7 +44,7 @@ app.get('/api/v1/json', limiter, (req, res) => {
     .longitude(lon)
     .units(units)
     .language('en')
-    .exclude('minutely,hourly,daily,alerts,flags')
+    .exclude('minutely,daily,alerts,flags')
     .get()
     .then(weather => res.status(200).json(weather))
     .catch(error => res.send(error))
